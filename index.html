@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Finance Tracker App</title>
     <!-- Favicon Links -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/path-to-your-icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/path-to-your-icons/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/path-to-your-icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="playstore.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="playstore.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/playstore.png">
     <link rel="manifest" href="/path-to-your-icons/site.webmanifest">
     <meta name="theme-color" content="#007acc">
     <style>
@@ -28,42 +28,15 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .carousel {
-            position: relative;
-            max-width: 80%;
-            height: 400px;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        .carousel img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: none;
-        }
-
-        .carousel-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
+        .app-icon {
             display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
+            justify-content: center;
+            margin: 20px 0;
         }
 
-        .carousel-button {
-            background-color: rgba(0, 0, 0, 0.5);
-            border: none;
-            color: white;
-            font-size: 18px;
-            cursor: pointer;
-            padding: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .carousel-button:hover {
-            background-color: rgba(0, 0, 0, 0.7);
+        .app-icon img {
+            width: 100px;
+            height: 100px;
         }
 
         nav {
@@ -165,6 +138,51 @@
             background-color: #005ea3;
         }
 
+        .carousel {
+            position: relative;
+            max-width: 70%;
+            height: 400px;
+            margin: 40px auto;
+            overflow: hidden;
+            background-color: #1e1e1e;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carousel img.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
         footer {
             margin-top: 40px;
             border-top: 5px solid #005ea3;
@@ -173,15 +191,6 @@
 </head>
 <body>
     <header>
-        <div class="carousel">
-            <img src="https://images.pexels.com/photos/47344/dollar-currency-money-us-dollar-47344.jpeg?cs=srgb&dl=pexels-pixabay-47344.jpg&fm=jpg" alt="Finance" style="display: block;">
-            <img src="https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?cs=srgb&dl=pexels-pixabay-259027.jpg&fm=jpg" alt="Statistics">
-            <img src="https://i3.wp.com/www.investopedia.com/thmb/B6KaEoNrQzdtk_0l3ILsv8sLCP0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TheHistoryofMoney-3da5ee3a5ecf45bb8c3fcdd0b42f6acd.jpg" alt="Money Management">
-            <div class="carousel-buttons">
-                <button class="carousel-button" onclick="changeSlide(-1)">&#10094;</button>
-                <button class="carousel-button" onclick="changeSlide(1)">&#10095;</button>
-            </div>
-        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -191,7 +200,11 @@
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
+        <div class="app-icon">
+            <img src="playstore.png" alt="App Icon">
+        </div>
     </header>
+    
     <main>
         <h1>Welcome to the Finance Tracker App</h1>
         <p>Your ultimate solution to managing and tracking your finances efficiently. Our app helps you keep track of your income, expenses, and savings with ease. Get insights into your spending habits and make informed financial decisions.</p>
@@ -224,6 +237,15 @@
             <button onclick="window.location.href='https://play.google.com/store/apps/details?id=com.yourapp'">Download on the Play Store</button>
         </div>
     </main>
+    <div class="carousel">
+        <img src="https://images.pexels.com/photos/47344/dollar-currency-money-us-dollar-47344.jpeg?cs=srgb&dl=pexels-pixabay-47344.jpg&fm=jpg" alt="Finance" class="active">
+        <img src="https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?cs=srgb&dl=pexels-pixabay-259027.jpg&fm=jpg" alt="Statistics">
+        <img src="https://i3.wp.com/www.investopedia.com/thmb/B6KaEoNrQzdtk_0l3ILsv8sLCP0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TheHistoryofMoney-3da5ee3a5ecf45bb8c3fcdd0b42f6acd.jpg" alt="Money Management">
+        <div class="carousel-buttons">
+            <button class="carousel-button" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="carousel-button" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
     <footer>
         <p>&copy; 2024 Finance Tracker App. All rights reserved.</p>
     </footer>
@@ -232,9 +254,9 @@
         const slides = document.querySelectorAll('.carousel img');
 
         function changeSlide(n) {
-            slides[currentSlide].style.display = 'none';
+            slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + n + slides.length) % slides.length;
-            slides[currentSlide].style.display = 'block';
+            slides[currentSlide].classList.add('active');
         }
 
         function autoSlide() {
@@ -242,7 +264,7 @@
         }
 
         // Initial display
-        slides[currentSlide].style.display = 'block';
+        slides[currentSlide].classList.add('active');
 
         // Automatic slide transition every 3 seconds
         setInterval(autoSlide, 3000);
